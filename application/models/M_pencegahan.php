@@ -22,7 +22,7 @@ class M_pencegahan extends CI_Model {
                 return $this->db->get('pencegahan');
 
     }
-      public function kode()
+    public function kode()
     {
         $q = $this->db->query("SELECT MAX(RIGHT(id_pencegahan,2)) as id_pencegahan from pencegahan");
         $kd = "";

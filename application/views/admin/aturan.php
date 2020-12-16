@@ -114,7 +114,7 @@
   <h3 style="display:block; text-align:center;">Tambah Data Aturan</h3>
 
   <form method="post" action="<?php echo base_url(). 'admin/Aturan/tambah_aksi'; ?>">
-    <input id="id_aturan" name="id_aturan" value="<?php echo $id_aturan ?>" hidden> 
+    <input id="id_aturan" name="id_aturan" value="<?php echo $id_aturan ?>"> 
      <div class="form-group">
       <label for="name">Pilih Hama Penyakit</label>
                 <select required id="id_hp" name="id_hp" class="form-control select2" style="width: 100%;" >

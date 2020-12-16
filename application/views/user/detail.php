@@ -9,9 +9,10 @@
 	 <!-- ##### Breadcrumb Area Start ##### -->
    <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
+    <?php foreach ($hp as $p ) { ?>
         <!-- Top Breadcrumb Area -->
                 <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(../assets_user/img/bg-img/jst.jpg);">
-                <h2>Detail Hama </h2>
+                <h2>Detail  <?php echo $p->nama_hp ?></h2>
         </div>
 
          <div class="container">
@@ -20,7 +21,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Detail</li>
+                            <li class="breadcrumb-item active" aria-current="page">Detail <?php echo $p->nama_hp ?></li>
                         </ol>
                     </nav>
                 </div>
@@ -30,8 +31,7 @@
 
     <!-- ##### Breadcrumb Area End ##### -->
    
-	 <?php foreach ($hp as $p ) { ?>
-     <section class="testimonial-area section-padding-100">
+	 <section class="testimonial-area section-padding-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -58,7 +58,7 @@
 
                                     </div>
                                 </div>
-                                      <div class="col-12">
+                                      <!-- <div class="col-12">
                         <h5>Cara Pengobatan</h5>
                         <p><?php echo $p->pengobatan ?></p>
                     </div>
@@ -67,7 +67,7 @@
                         <h5>Cara Pencegahan</h5>
                         <p><?php echo $p->pencegahan ?></p>
                     </div>
-                       
+                        -->
                       
                       
                  </div>   

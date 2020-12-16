@@ -19,22 +19,21 @@ class M_hamapenyakit extends CI_Model {
 		        return $this->db->get('hp');
 
 	}
-	public function kode()
+  public function kode()
     {
-        $q = $this->db->query("SELECT MAX(RIGHT(id_hp,1)) as id_hp from hp");
+        $q = $this->db->query("SELECT MAX(RIGHT(id_hp,2)) as id_hp from hp");
         $kd = "";
         if($q->num_rows()>0){
             foreach($q->result() as $k){
                 $tmp = ((int)$k->id_hp)+1;
-                $kd = sprintf("%1s", $tmp);
+                $kd = sprintf("%02s", $tmp);
             }
         }else{
-            $kd = "1";
+            $kd = "01";
         }
         
-        return "P".$kd;
+        return "G".$kd;
     }
-
 function hapus_data($where,$table){
         $this->db->where($where);
         $this->db->delete($table);

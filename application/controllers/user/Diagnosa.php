@@ -15,9 +15,24 @@ class Diagnosa extends CI_Controller {
         $this->load->view('user/diagnosa',$data);
     }
 
+    public function pilihan()
+	{
+       // $data["gejala"] = $this->M_diagnosa->pilihan();
+        $this->load->view('user/pilihan');
+        //$gejala_semua       = $this->input->post('gejala[]');
+        //$data['id_gejala']=$this->M_diagnosa->pilihan($gejala_semua);
+        //$data['id_gejala']      = $gejala_semua;
+        //$where = array('id_gejala' => $gejala_semua);
+       // print_r($data);
+    }
+    
     public function hasil()
 	{
-        $data["gejala"] = $this->M_diagnosa->hasil();
-        $this->load->view('user/hasil',$data);
+        //$data["gejala"] = $this->M_diagnosa->hasil();
+        $name = count($this->input->post('kondisi[]'));
+        $name_semua       = $this->input->post('kondisi');
+        $data['kondisi']      = $name_semua;
+        print_r($data);
+       // $this->load->view('user/hasil');
 	}
 }

@@ -8,10 +8,10 @@
 	<?php $this->load->view('partials/header'); ?>
 	 <!-- ##### Breadcrumb Area Start ##### -->
    <!-- ##### Breadcrumb Area Start ##### -->
-    <div class="breadcrumb-area">
+   <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
         <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(../assets_user/img/bg-img/jst.jpg);">
-            <h2>Hasil Diagnosa</h2>
+             <h2>Hasil Diagnosa</h2>
         </div>
 
         <div class="container">
@@ -31,10 +31,10 @@
     
  <section class="alazea-portfolio-area portfolio-page section-padding-0-100">
                     <!-- Section Heading -->
-                <form action="" method="post" >
+                <form action="hasil" method="post" >
                     <div class="section-heading text-center">
                         <h2>Hasil Diagnosa</h2>
-                        <p>Hasil Konsultasi Anda</p>
+                        <p>Hasil Diagnosa Anda</p>
                         <div class="form-group">
                         <div class="container">
             <div class="row">
@@ -46,61 +46,21 @@
                    <div role="tabpanel" class="tab-pane fade show active" id="description">
     <table id="example2" class="table table-bordered table-striped">
       <thead>
-        <tr>
-          <th>No</th>
-          <th>Gejala Terpilih</th>
-        </tr>
-         </thead>              
       <?php
       
       $no = 1;
       if (isset($_POST['simpan'])){
-        foreach ($_POST['gejala'] as $value) { ?>
+        foreach ($_POST['kondisi'] as $value) { ?>
       <tr>
         <td><?php echo $no++ ?></td>
-        <td><?php 
-                echo $value."<br>";
-            }
-         ?></td>
+        <td><?php echo $value ?></td>
       </tr>
-    <?php } ?>
-   
-      <tbody id="data-hp">
-
-      </tbody>
-      
+    <?php }} ?>
     </table>
-   <br> <br>
-    <table id="example2" class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>Gejala Terpilih</th>
-        </tr>
-         </thead>              
-      <?php
-      
-      $no = 1;
-      if (isset($_POST['simpan'])){
-        foreach ($_POST['gejala'] as $value) { ?>
-      <tr>
-        <td><?php echo $no++ ?></td>
-        <td><?php 
-                echo $value."<br>";
-            }
-         ?></td>
-      </tr>
-    <?php } ?>
-   
-      <tbody id="data-hp">
-
-      </tbody>
-      
-    </table>
-      
-    </div>
-
-	
+    <div class="col-12">
+        <input type="submit" class="btn alazea-btn mt-15" name="simpan" value="Diagnosa"></input>     
+    </div>    
+    </div>	
 </body>
 <?php $this->load->view('partials/script'); ?>
 </html>

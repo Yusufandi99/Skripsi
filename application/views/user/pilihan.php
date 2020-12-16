@@ -8,10 +8,10 @@
 	<?php $this->load->view('partials/header'); ?>
 	 <!-- ##### Breadcrumb Area Start ##### -->
    <!-- ##### Breadcrumb Area Start ##### -->
-    <div class="breadcrumb-area">
+   <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
         <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(../assets_user/img/bg-img/jst.jpg);">
-            <h2>Diagnosa</h2>
+             <h2>Pilihan Gejala </h2>
         </div>
 
         <div class="container">
@@ -20,7 +20,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Diagnosa</li>
+                            <li class="breadcrumb-item active" aria-current="page">Pilihan Gejala</li>
                         </ol>
                     </nav>
                 </div>
@@ -31,11 +31,10 @@
     
  <section class="alazea-portfolio-area portfolio-page section-padding-0-100">
                     <!-- Section Heading -->
-                <form action="diagnosa/pilihan" method="post" >
+                <form action="hasil" method="post" >
                     <div class="section-heading text-center">
-                        <h2>Diagnosa</h2>
-                        <p>Konsultasi masalah hama dan penyakit jamur tiram anda</p>
-                        <br>
+                        <h2>Pilihan Gejala</h2>
+                        <p>Pilihan Gejala Anda</p>
                         <div class="form-group">
                         <div class="container">
             <div class="row">
@@ -44,43 +43,38 @@
                         <!-- Tabs -->
                         <!-- Tab Content -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade show active" id="description">
-                            <table id="example2" class="table table-bordered table-striped">
+                   <div role="tabpanel" class="tab-pane fade show active" id="description">
+    <table id="example2" class="table table-bordered table-striped">
       <thead>
         <tr>
           <th>No</th>
-          <th>Nama Gejala</th>
-          <th><label for="name">Pilih Gejala</label></th>
+          <th>Gejala Terpilih</th>
+          <th>Nilai Gejala</th>
         </tr>
-         </thead>
-        
-            
+         </thead>              
       <?php
       
       $no = 1;
-      foreach ($gejala as $p ) {
-      ?>
+      if (isset($_POST['simpan'])){
+        foreach ($_POST['gejala'] as $value) { ?>
       <tr>
         <td><?php echo $no++ ?></td>
-        <td><?php echo $p['gejala'] ?></td>
-        <td><input  name="gejala[]" type="checkbox" value="<?php echo $p['id_gejala'];?>"></td>
+        <td><input name="gejala" value="<?php echo $value ?>" hidden><?php echo $value ?></td>
+         <td> <select class="form-control" name="kondisi[]" required>
+				<option name="kondisi">Pilih</option>
+				<option value="1" name="kondisi">Sangat Yakin</option>
+				<option value="0.8" name="kondisi">Yakin</option>
+                <option value="0.6" name="kondisi">Cukup Yakin</option>
+                <option value="0.4" name="kondisi">Sedikit Yakin</option>
+                <option value="0.2" name="kondisi">Tidak Tahu</option>
+			  </select></td>
       </tr>
-    <?php } ?>
-     
-      <tbody id="data-hp">
-
-      </tbody>
+    <?php }} ?>
     </table>
     <div class="col-12">
         <input type="submit" class="btn alazea-btn mt-15" name="simpan" value="Diagnosa"></input>     
-    </div>
-       
-                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-
-	
+    </div>    
+    </div>	
 </body>
 <?php $this->load->view('partials/script'); ?>
 </html>

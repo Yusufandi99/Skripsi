@@ -34,18 +34,18 @@ class M_aturan extends CI_Model {
     }
     public function kode()
     {
-        $q = $this->db->query("SELECT MAX(RIGHT(id_aturan,1)) as id_aturan from aturan");
+        $q = $this->db->query("SELECT MAX(RIGHT(id_aturan,2)) as id_aturan from aturan");
         $kd = "";
         if($q->num_rows()>0){
             foreach($q->result() as $k){
                 $tmp = ((int)$k->id_aturan)+1;
-                $kd = sprintf("%1s", $tmp);
+                $kd = sprintf("%02s", $tmp);
             }
         }else{
-            $kd = "1";
+            $kd = "01";
         }
         
-        return "G".$kd;
+        return "K".$kd;
     }
 
     
