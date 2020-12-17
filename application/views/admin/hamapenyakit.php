@@ -24,14 +24,14 @@
       <div class="row">
         <div class="col-lg-12 col-xs-6">
 <?php foreach ($hp as $p) {?>
-<div class="modal fade" id="modal-edit<?php echo $p['id_hp']?>">
+<div  class="modal fade" id="modal-edit<?php echo $p['id_hp']?>">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
                <div class="col-md-offset-1 col-md-10 col-md-offset-1 well">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                   <form action="<?= base_url() ?>admin/Hamapenyakit/edit" method="post">
+                   <form enctype="multipart/form-data"  action="<?= base_url() ?>admin/Hamapenyakit/edit" method="post">
               <h3 style="display:block; text-align:center;">Edit Data Hama Penyakit</h3>
  <form method="post" enctype="multipart/form-data" action="<?php echo base_url(). 'admin/Hamapenyakit/edit'; ?>">
     <input id="id_hp" name="id_hp" value="<?php echo $p['id_hp'] ?>" hidden> 
@@ -65,7 +65,8 @@
           </div></div></div>
 
     <div class="form-group">
-      <input type="text" id="gambar" class="form-control" name="gambar" aria-describedby="sizing-addon2" value="<?php echo $p['gambar'] ?>" readonly> 
+       <input class="form-control-file" type="file" name="gambar" id="gambar">
+      <input type="text" id="gambar_old" class="form-control" name="gambar_old" aria-describedby="sizing-addon2" value="<?php echo $p['gambar'] ?>" readonly> 
     </div>     
        
               <div class="modal-footer">
@@ -99,15 +100,15 @@
   
       <?php }?>
 
-
+   <button class="btn btn-primary" data-toggle="modal" data-target="#modal-tambah"><i class="glyphicon glyphicon-plus-sign"></i> Tambah Data</button>
 <div class="box">
   <div class="box-header">
-    <div class="col-md-2" style="padding: 0;">
-      <button class="form-control btn btn-primary" data-toggle="modal" data-target="#modal-tambah"><i class="glyphicon glyphicon-plus-sign"></i> Tambah Data</button>
+    <div class="col-md-2" style="padding: 0;">      
     </div>
 
       <div class="box-body">
-    <table id="example2" class="table table-bordered table-hover">
+    <table id="example1" class="table table-bordered table-hover">
+
       <thead>
         <tr>
           <th>No</th>
