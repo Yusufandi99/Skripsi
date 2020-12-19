@@ -31,7 +31,7 @@
     
  <section class="alazea-portfolio-area portfolio-page section-padding-0-100">
                     <!-- Section Heading -->
-                <form action="diagnosa/pilihan" method="post" >
+                <form action="<?= base_url('user/Diagnosa/pilihan') ?>" method="post" >
                     <div class="section-heading text-center">
                         <h2>Diagnosa</h2>
                         <p>Konsultasi masalah hama dan penyakit jamur tiram anda</p>

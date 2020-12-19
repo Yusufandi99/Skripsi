@@ -17,22 +17,112 @@ class Diagnosa extends CI_Controller {
 
     public function pilihan()
 	{
-       // $data["gejala"] = $this->M_diagnosa->pilihan();
         $this->load->view('user/pilihan');
-        //$gejala_semua       = $this->input->post('gejala[]');
-        //$data['id_gejala']=$this->M_diagnosa->pilihan($gejala_semua);
-        //$data['id_gejala']      = $gejala_semua;
-        //$where = array('id_gejala' => $gejala_semua);
-       // print_r($data);
     }
     
     public function hasil()
 	{
-        //$data["gejala"] = $this->M_diagnosa->hasil();
-        $name = count($this->input->post('kondisi[]'));
-        $name_semua       = $this->input->post('kondisi');
-        $data['kondisi']      = $name_semua;
-        print_r($data);
-       // $this->load->view('user/hasil');
-	}
+        /*
+        | ------------------------------------------------------------------------
+        |  PROSES PENGAMBILAN DATA 
+        | ------------------------------------------------------------------------
+        |*/
+        $counter = count($this->input->post('kondisi[]')); # hitung jumlah berapa gejala yang dipilih (digunakan untuk looping)
+        $arbobot = array('0','1.0', '0.8', '0.6', '0.4', '0.2'); #nilai bobot dari kondisi yang dipilih user
+
+        // Ambil gejala dan kondisi yang dipilih user
+        for ($i = 0; $i < $counter; $i++) {
+        $kondisi = explode("_", $_POST['kondisi'][$i]);
+            if (strlen($_POST['kondisi'][$i]) > 1) {
+                $argejala []= $kondisi[0]; // array gejala di pilih user
+                $arkondisi [] = $kondisi[1]; // array kondisi yang dipilih user
+            }
+        }
+        
+        
+        /*
+        | ------------------------------------------------------------------------
+        |  PERHITUNGAN NILAI CF
+        | ------------------------------------------------------------------------
+        |*/   
+
+        $sql_penyakit = $this->db->query("SELECT * FROM hp order by id_hp ASC");
+        $array_penyakit = array();
+        foreach ($sql_penyakit->result_array() as $key) {
+            $cftotal_temp = 0;
+            $cf = 0;
+            
+            $cflama = 0;
+            
+            $query_gejala = $this->db->select('*')->where('id_hp', $key['id_hp'])->get('pengetahuan');
+            
+            foreach ($query_gejala->result_array() as $key => $value) {
+            
+                
+                for ($i = 0; $i < $counter; $i++) {
+                    $array_kondisi = explode("_", $_POST['kondisi'][$i]);
+                    $gejala = $array_kondisi[0];
+                    if ($value['id_gejala'] == $gejala) {
+                        $cf = $value['cf_pakar'] * $arbobot[$array_kondisi[1]];
+                        
+                        // Rumus Cf Combine
+                        if (($cf >= 0) && ($cf * $cflama >= 0)) {
+                            $cflama = $cflama + ($cf * (1 - $cflama));
+                        }
+                    }
+                }
+            }
+            if ($cflama > 0) {
+                # hasil dari semua perhitungan cf dalam bentuk array
+                $array_penyakit += array($value['id_hp'] => number_format($cflama, 4));  
+            } 
+            
+        }
+
+            arsort($array_penyakit); # urutkan hasil perhitungan per penyakit dari nilai yang tertinggi sampai terendah
+            $input_gejala = serialize($argejala); # ubah array menjadi varchar agar bisa disimpan di database
+            $input_penyakit = serialize($array_penyakit); # ubah array menjadi varchar agar bisa disimpan di database
+
+            $np1 = 0;
+            foreach ($array_penyakit as $key1 => $value1) {
+                $np1++;
+                $penyakit_1[$np1] = $key1;
+                $nilai[$np1] = $value1;
+                
+            }
+
+        /*
+        | ------------------------------------------------------------------------
+        |  INSERT DATA HASIL PERHITUNGAN KE DATABASE
+        | ------------------------------------------------------------------------
+        |*/
+            $data_hasil = [
+                'hp' =>$input_penyakit,
+                'gejala' =>$input_gejala,
+                'id_hp' =>$penyakit_1[1],
+                'cf_hasil' =>$nilai[1],
+            ];
+            $this->db->insert('hasil', $data_hasil);
+            
+
+        /*
+        | ------------------------------------------------------------------------
+        |  PARSING DATA KE HALAMAN VIEW
+        | ------------------------------------------------------------------------
+        |*/
+        $data['hasil'] = round($nilai[1], 3);
+        $data['persentasi'] = round($nilai[1]*100); 
+        $data['penyakit'] = $array_penyakit;
+        $data['penyakit_lain'] = $array_penyakit;
+        $data['kondisi'] = $arkondisi;
+        $data['penyakit_terpilih'] = $penyakit_1[1];
+        $data['gejala'] = $argejala;
+        $data['title'] = 'Hasil Diagnosa';
+        
+        $this->load->view('user/hasil_diagnosa',$data);
+
+        
+    }
+    
+    
 }

@@ -10,7 +10,7 @@
    <!-- ##### Breadcrumb Area Start ##### -->
    <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(../assets_user/img/bg-img/jst.jpg);">
+       <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(<?php echo base_url('assets_user/img/bg-img/jst.jpg');?>">
              <h2>Pilihan Gejala </h2>
         </div>
 
@@ -31,7 +31,7 @@
     
  <section class="alazea-portfolio-area portfolio-page section-padding-0-100">
                     <!-- Section Heading -->
-                <form action="hasil" method="post" >
+                <!-- <form action="hasil" method="post" > -->
                     <div class="section-heading text-center">
                         <h2>Pilihan Gejala</h2>
                         <p>Pilihan Gejala Anda</p>
@@ -48,6 +48,7 @@
       <thead>
         <tr>
           <th>No</th>
+          <th>Kode</th>
           <th>Gejala Terpilih</th>
           <th>Nilai Gejala</th>
         </tr>
@@ -55,25 +56,31 @@
       <?php
       
       $no = 1;
+      $null=0;
       if (isset($_POST['simpan'])){
-        foreach ($_POST['gejala'] as $value) { ?>
+        foreach ($_POST['gejala'] as $value) { 
+            $gejala = $this->db->where('id_gejala',$value)->get('gejala')->row(); ?>
       <tr>
         <td><?php echo $no++ ?></td>
         <td><input name="gejala" value="<?php echo $value ?>" hidden><?php echo $value ?></td>
-         <td> <select class="form-control" name="kondisi[]" required>
-				<option name="kondisi">Pilih</option>
-				<option value="1" name="kondisi">Sangat Yakin</option>
-				<option value="0.8" name="kondisi">Yakin</option>
-                <option value="0.6" name="kondisi">Cukup Yakin</option>
-                <option value="0.4" name="kondisi">Sedikit Yakin</option>
-                <option value="0.2" name="kondisi">Tidak Tahu</option>
+        <td><input name="nama_gejala" value="<?php echo $gejala->gejala ?>" hidden><?php echo $gejala->gejala ?></td>
+         <td> 
+         <form action="<?= base_url('user/Diagnosa/hasil') ?>" method="post">
+         <select class="form-control" name="kondisi[]" required>
+				<option value="">Pilih</option>
+				<option value="<?= $value .'_'. 1; ?>">Sangat Yakin</option>
+				<option value="<?= $value .'_'. 2; ?>">Yakin</option>
+                <option value="<?= $value .'_'. 3; ?>">Cukup Yakin</option>
+                <option value="<?= $value .'_'. 4; ?>">Sedikit Yakin</option>
+                <option value="<?= $value .'_'. 5; ?>">Tidak Tahu</option>
 			  </select></td>
       </tr>
     <?php }} ?>
     </table>
     <div class="col-12">
-        <input type="submit" class="btn alazea-btn mt-15" name="simpan" value="Diagnosa"></input>     
-    </div>    
+        <button type="submit" class="btn alazea-btn mt-15">Diagnosa</button>     
+    </div>
+    </form>    
     </div>	
 </body>
 <?php $this->load->view('partials/script'); ?>

@@ -31,7 +31,7 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                   <form enctype="multipart/form-data"  action="<?= base_url() ?>admin/Hamapenyakit/edit" method="post">
+                   
               <h3 style="display:block; text-align:center;">Edit Data Hama Penyakit</h3>
  <form method="post" enctype="multipart/form-data" action="<?php echo base_url(). 'admin/Hamapenyakit/edit'; ?>">
     <input id="id_hp" name="id_hp" value="<?php echo $p['id_hp'] ?>" hidden> 
