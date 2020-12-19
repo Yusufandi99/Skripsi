@@ -145,7 +145,7 @@
                                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#pencegahan<?= $p->id_hp ?>">
                                             Pencegahan
                                         </button>
-                                         <button type="button" class="btn btn-warning   " data-toggle="modal" data-target="#pencegahan<?= $p->id_hp ?>">
+                                         <button type="button" class="btn btn-warning   " data-toggle="modal" data-target="#pengobatan<?= $p->id_hp ?>">
                                             Pengobatan
                                         </button>
                                     </div>
@@ -187,7 +187,7 @@
                                                 
                                             </tbody>
                                         </table>
-                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pencegahan<?= $p->id_hp ?>">
+                                         <button onClick="window.open('pdf', '_blank')" type="button" class="btn btn-danger" data-toggle="modal" >
                                             Print
                                         </button>
                                     </div>
@@ -247,6 +247,34 @@
     </div>
 </div>
 <?php } ?>
+
+<?php foreach ($query->result() as $row) {  
+    $pengobatan = $this->db->where('id_hp',$row->id_hp)->get('pengobatan')->row();
+    ?>
+<!-- Modal -->
+<div class="modal fade" id="pengobatan<?= $row->id_hp?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="detail">pengobatan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <p><?= $pengobatan->pengobatan; ?></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php } ?>
+
+
 </body>
 <?php $this->load->view('partials/script'); ?>
 </html>

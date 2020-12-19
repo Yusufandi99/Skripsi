@@ -19,6 +19,12 @@ class Diagnosa extends CI_Controller {
 	{
         $this->load->view('user/pilihan');
     }
+
+    public function pdf()
+    {
+        
+        $this->load->view('user/pdf_hasil');
+    }
     
     public function hasil()
 	{
