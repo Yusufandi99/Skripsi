@@ -66,7 +66,7 @@
 
     <div class="form-group">
        <input class="form-control-file" type="file" name="gambar" id="gambar">
-      <input type="text" id="gambar_old" class="form-control" name="gambar_old" aria-describedby="sizing-addon2" value="<?php echo $p['gambar'] ?>" readonly> 
+      <input type="text" id="gambar_old" class="form-control" name="gambar_old" aria-describedby="sizing-addon2" value="<?php echo $p['gambar'] ?>" hidden> 
     </div>     
        
               <div class="modal-footer">
