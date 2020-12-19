@@ -18,10 +18,10 @@ class M_Detail extends CI_Model {
      
  function detail($id_hp)
         {
-             $this->db->select('hp.*, pengobatan.pengobatan, pencegahan.pencegahan ');
+             $this->db->select('hp.*');
  $this->db->from('hp');
- $this->db->join('pengobatan','pengobatan.id_hp = hp.id_hp');
- $this->db->join('pencegahan','pencegahan.id_hp = hp.id_hp');
+ // $this->db->join('pengobatan','pengobatan.id_hp = hp.id_hp');
+ // $this->db->join('pencegahan','pencegahan.id_hp = hp.id_hp');
                $this->db->where('hp.id_hp', $id_hp);
                 $query = $this->db->get();
                 return $query->result();

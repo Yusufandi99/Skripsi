@@ -2,6 +2,12 @@
 <html>
 <head>
 <?php $this->load->view('partials/head'); ?>
+<style>   
+    @media print
+    {
+    .noprint {display:none;}
+    }
+</style>
     
 </head>
 <body>
@@ -187,9 +193,6 @@
                                                 
                                             </tbody>
                                         </table>
-                                         <button onClick="window.open('pdf', '_blank')" type="button" class="btn btn-danger" data-toggle="modal" >
-                                            Print
-                                        </button>
                                     </div>
                                 </div>
                             </div>

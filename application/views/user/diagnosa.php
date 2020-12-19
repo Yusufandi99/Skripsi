@@ -31,21 +31,17 @@
     
  <section class="alazea-portfolio-area portfolio-page section-padding-0-100">
                     <!-- Section Heading -->
-                <form action="<?= base_url('user/Diagnosa/pilihan') ?>" method="post" >
-                    <div class="section-heading text-center">
-                        <h2>Diagnosa</h2>
-                        <p>Konsultasi masalah hama dan penyakit jamur tiram anda</p>
-                        <br>
-                        <div class="form-group">
-                        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="product_details_tab clearfix">
-                        <!-- Tabs -->
-                        <!-- Tab Content -->
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade show active" id="description">
-                            <table id="example2" class="table table-bordered table-striped">
+  <form action="<?= base_url('user/Diagnosa/pilihan') ?>" method="post" >
+    <div class="section-heading text-center">
+      <h2>Diagnosa</h2>
+      <p>Konsultasi masalah hama dan penyakit jamur tiram anda</p>
+      <br>
+      <div class="form-group">
+       <div class="container">
+          <div class="row">
+            <div class="col-12">
+       <div role="tabpanel" class="tab-pane fade show active" id="description">
+      <table id="example2" class="table table-bordered table-striped">
       <thead>
         <tr>
           <th>No</th>
@@ -53,10 +49,7 @@
           <th><label for="name">Pilih Gejala</label></th>
         </tr>
          </thead>
-        
-            
       <?php
-      
       $no = 1;
       foreach ($gejala as $p ) {
       ?>
@@ -66,21 +59,16 @@
         <td><input  name="gejala[]" type="checkbox" value="<?php echo $p['id_gejala'];?>"></td>
       </tr>
     <?php } ?>
-     
       <tbody id="data-hp">
-
       </tbody>
     </table>
     <div class="col-12">
         <input type="submit" class="btn alazea-btn mt-15" name="simpan" value="Diagnosa"></input>     
     </div>
-       
-                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-
-	
+      </div>
+    </li>
+  </ul>
+  </div>
 </body>
 <?php $this->load->view('partials/script'); ?>
 </html>

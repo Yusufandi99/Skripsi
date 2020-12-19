@@ -11,7 +11,7 @@
     <div class="breadcrumb-area">
     <?php foreach ($hp as $p ) { ?>
         <!-- Top Breadcrumb Area -->
-                <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(../assets_user/img/bg-img/jst.jpg);">
+               <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(<?php echo base_url('assets_user/img/bg-img/jst.jpg');?>">
                 <h2>Detail  <?php echo $p->nama_hp ?></h2>
         </div>
 

@@ -12,12 +12,16 @@
         <div class="breakpoint-off">
             
         <div class="alazea-main-menu">
+             <div class="classy-nav-container breakpoint-off">
                 <div class="container">
                     <!-- Menu -->
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand -->
                         <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
                        
                         <!-- Menu -->
                         <div class="classy-menu">
