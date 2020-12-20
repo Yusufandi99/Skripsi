@@ -17,7 +17,9 @@
                     <!-- Menu -->
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
-                        <!-- Nav Brand -->
+                       <!-- Nav Brand -->
+                        <a href="index.html" class="nav-brand"><img src="<?php echo base_url('assets_user/img/core-img/b3.png')?>" alt=""></a>
+
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>

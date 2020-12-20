@@ -28,19 +28,34 @@
         </div>
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
- <section class="alazea-portfolio-area portfolio-page section-padding-0-100">
+ <!-- ##### Contact Area Info Start ##### -->
+    <div class="contact-area-info section-padding-0-100">
         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                    <!-- Section Heading -->
-                <form action="#" method="post" >
-                    <div class="section-heading text-center">
-                        <h2>Contact</h2>
-                    
+            <div class="row align-items-center justify-content-between">
+                <!-- Contact Thumbnail -->
+                <div class="col-12 col-md-6">
+                    <div class="contact--thumbnail">
+                        <img src="<?php echo base_url('assets_user/img/bg-img/jasentra.png')?>" alt="">
                     </div>
-                    </div>             	
- </section>
-	
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>Hubungi Kami</h2>
+                        <p>PT. JASENTRA JEMBER</p>
+                    </div>
+                    <!-- Contact Information -->
+                    <div class="contact-information">
+                        <p><span>Alamat:</span> Jl. Airlangga, Gudang Rejo, Rambipuji, Jember, Jawa Timur</p>
+                        <p><span>Telepon:</span> 0813 3170 7027 (Pak Riezky)</p>
+                        <p><span>Email:</span> jasentra@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Contact Area Info End ##### -->	
 </body>
 <?php $this->load->view('partials/script'); ?>
 </html>

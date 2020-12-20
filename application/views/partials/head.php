@@ -9,7 +9,7 @@
     <title>Jasentra - Sistem Pakar Jamur tiram</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="<?php echo base_url('assets_user/img/core-img/favicon.ico')?>">
+    <link rel="icon" href="<?php echo base_url('assets_user/img/core-img/jst.ico')?>">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="<?php echo base_url('assets_user/style.css')?>">
