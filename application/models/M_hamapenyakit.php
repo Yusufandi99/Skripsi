@@ -69,7 +69,11 @@ function hapus_data($where,$table){
   }
 
   function total_a() {
-    return $this->db->get('aturan')->num_rows();
+    return $this->db->get('pengetahuan')->num_rows();
+  }
+
+  function total_h() {
+    return $this->db->get('hasil')->num_rows();
   }
    
 }

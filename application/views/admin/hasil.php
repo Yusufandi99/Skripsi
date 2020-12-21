@@ -13,12 +13,12 @@
 
     <section class="content-header">
       <h1>
-        User
+        Hasil Diagnosa
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">user</li>
+        <li class="active">hasil diagnosa</li>
       </ol>
     </section>
 
@@ -36,15 +36,21 @@
         <tr>
           <th>No</th>
           <th>Nama</th>
+          <th>Gejala</th>
+          <th>Hama/Penyakit</th>
+          <th>Hasil CF</th>
         </tr>
          </thead>
       <?php
       $no = 1;
-      foreach ($user as $p ) {
+      foreach ($hasil as $p ) {
       ?>
       <tr>
         <td><?php echo $no++ ?></td>
-        <td><?php echo $p['nama'] ?></td>
+        <td><?php echo $p['id_hp'] ?></td>
+        <td><?php echo $p['gejala'] ?></td>
+         <td><?php echo $p['id_hp'] ?></td>
+        <td><?php echo $p['cf_hasil'] ?></td>
        </tr>
     <?php } ?>
      

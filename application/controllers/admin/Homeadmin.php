@@ -14,6 +14,7 @@ class Homeadmin extends CI_Controller {
         $this->data['pengetahuan'] =  $this->M_hamapenyakit->total_p();
         $this->data['user'] =  $this->M_hamapenyakit->total_u();
         $this->data['aturan'] =  $this->M_hamapenyakit->total_a();
+        $this->data['hasil'] =  $this->M_hamapenyakit->total_h();
       	$this->load->view('admin/homeadmin',$this->data);
 	}
 }

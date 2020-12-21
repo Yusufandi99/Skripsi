@@ -193,6 +193,9 @@
                                                 
                                             </tbody>
                                         </table>
+                                          <a href="<?php echo site_url('user/Diagnosa')?>" type="button" class="btn btn-danger">
+                                            Diagnosa Lagi
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -259,7 +262,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="detail">pengobatan</h5>
+                <h5 class="detail">Pengobatan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
