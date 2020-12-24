@@ -74,7 +74,7 @@
                                 <div class="single-benefits-area">
                                     <img src="<?php echo base_url('assets_user/img/core-img/b3.png')?>" alt="">
                                     <h5>Detail Hama Penyakit</h5>
-                                    <p>Sistem ini emiliki data hama penyakit serta gejalanya sampai dengan cara pengobatan dan pencegahan.</p>
+                                    <p>Sistem ini memiliki 13 data hama penyakit serta gejalanya sampai dengan cara pengobatan dan pencegahan.</p>
                                 </div>
                             </div>
 

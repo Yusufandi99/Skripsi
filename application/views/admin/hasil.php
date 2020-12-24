@@ -36,8 +36,7 @@
         <tr>
           <th>No</th>
           <th>Nama</th>
-          <th>Gejala</th>
-          <th>Hama/Penyakit</th>
+          <th>Diagnosa Hama/Penyakit</th>
           <th>Hasil CF</th>
         </tr>
          </thead>
@@ -47,10 +46,9 @@
       ?>
       <tr>
         <td><?php echo $no++ ?></td>
-        <td><?php echo $p['id_hp'] ?></td>
-        <td><?php echo $p['gejala'] ?></td>
-         <td><?php echo $p['id_hp'] ?></td>
-        <td><?php echo $p['cf_hasil'] ?></td>
+        <td>Yusuf</td>
+        <td><?php echo $p['nama_hp'] ?></td>
+        <td><?php echo  round($p['cf_hasil']*100); ?> %</td>
        </tr>
     <?php } ?>
      

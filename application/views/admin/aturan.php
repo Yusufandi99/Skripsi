@@ -37,7 +37,8 @@
       <thead>
         <tr>
           <th>No</th>
-          <th>Aturan</th>
+          <th>Hama/Penyakit</th>
+          <th>Gejala</th>
         </tr>
          </thead>
          
@@ -48,9 +49,8 @@
       ?>
       <tr>
         <td><?php echo $no++ ?></td>
-        <td> IF <?php echo $p['gejala'] ?>
-          THEN <?php echo $p['nama_hp'] ?>
-        </td>
+        <td><?php echo $p['nama_hp'] ?></td>
+        <td><?php echo $p['gejala'] ?></td>
       </tr>
     <?php } ?>
      

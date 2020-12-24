@@ -137,7 +137,7 @@
   <h3 style="display:block; text-align:center;">Tambah Data Gejala</h3>
 
   <form method="post" action="<?php echo base_url(). 'admin/Gejala/tambah_aksi'; ?>">
-    <input id="id_gejala" name="id_gejala" value="<?php echo $id_gejala ?>" > 
+    <input id="id_gejala" name="id_gejala" value="<?php echo $id_gejala ?>" hidden> 
     <div class="form-group">
       <input type="text" id="gejala" class="form-control" placeholder="Nama Gejala" name="gejala" aria-describedby="sizing-addon2" >
     </div>

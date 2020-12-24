@@ -9,7 +9,11 @@ class M_hasil extends CI_Model {
     }
 
 	function tampil_data(){
-		return $this->db->get('hasil');
+		$this->db->select('hasil.*, hp.*');
+        $this->db->from('hasil');
+        $this->db->join('hp', 'hp.id_hp = hasil.id_hp','left');
+        $query = $this->db->get();
+        return $query;
 	}
 
 }
