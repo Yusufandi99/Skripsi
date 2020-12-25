@@ -37,6 +37,7 @@
                         <p>Pilihan Gejala Anda</p>
                         <div class="form-group">
                         <div class="container">
+                          
             <div class="row">
                 <div class="col-12">
                     <div class="product_details_tab clearfix">

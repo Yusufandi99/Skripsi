@@ -24,7 +24,7 @@ class Register extends CI_Controller {
               $username = $this->input->post('username');
               $password = md5($this->input->post('password'));
               $alamat = $this->input->post('alamat');
-              $kategori = $this->input->post('kategori');
+              $level = $this->input->post('level');
      
                $data = array(
               'id_user' => $id_user, 	
@@ -32,7 +32,7 @@ class Register extends CI_Controller {
               'username' => $username,
               'password' => $password,
               'alamat' => $alamat,
-              'kategori' => $kategori,
+              'level' => $level,
         );
                $this->M_register->input_data($data,'user');
                if ($data) {
@@ -46,7 +46,7 @@ class Register extends CI_Controller {
               <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
           </div>');
       }
-        redirect('user/register');
+        redirect('user/login');
  	//print_r($id_user);
             
     }

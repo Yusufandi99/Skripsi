@@ -74,7 +74,7 @@
 
     <section class="content-header">
       <h1>
-        pencegahan
+        Pencegahan
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">

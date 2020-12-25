@@ -28,7 +28,7 @@
         </div>
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
-    <?= $this->session->flashdata('alert'); ?>
+  
  <section class="alazea-portfolio-area portfolio-page section-padding-0-100">
         <div class="container">
             <div class="row">
@@ -47,7 +47,7 @@
                         <br>
                         <input type="password" class="form-control" name="password" placeholder="Password"><br>
                         <textarea type="textarea" class="form-control" name="alamat" placeholder="Alamat"></textarea><br>
-                        <input type="text" class="form-control" name="kategori" value="user" hidden><br>
+                        <input type="text" class="form-control" name="level" value="user" hidden><br>
                     </div>
                       <button type="submit" class="btn alazea-btn w-10">Daftar</button>
                     </div>  

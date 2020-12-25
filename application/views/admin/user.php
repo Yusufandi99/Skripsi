@@ -36,6 +36,8 @@
         <tr>
           <th>No</th>
           <th>Nama</th>
+          <th>Username</th>
+          <th>Alamat</th>
         </tr>
          </thead>
       <?php
@@ -45,6 +47,8 @@
       <tr>
         <td><?php echo $no++ ?></td>
         <td><?php echo $p['nama'] ?></td>
+        <td><?php echo $p['username'] ?></td>
+        <td><?php echo $p['alamat'] ?></td>
        </tr>
     <?php } ?>
      

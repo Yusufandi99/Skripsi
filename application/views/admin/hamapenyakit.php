@@ -66,7 +66,7 @@
 
     <div class="form-group">
        <input class="form-control-file" type="file" name="gambar" id="gambar">
-      <input type="text" id="gambar_old" class="form-control" name="gambar_old" aria-describedby="sizing-addon2" value="<?php echo $p['gambar'] ?>" hidden> 
+      <input type="hidden" id="gambar_old" class="form-control" name="gambar_old" aria-describedby="sizing-addon2" value="<?php echo $p['gambar'] ?>" > 
     </div>     
        
               <div class="modal-footer">
@@ -174,7 +174,7 @@
   <h3 style="display:block; text-align:center;">Tambah Data Hama Penyakit</h3>
 
   <form method="post" enctype="multipart/form-data" action="<?php echo base_url(). 'admin/Hamapenyakit/tambah_aksi'; ?>">
-    <input id="id_hp" name="id_hp" value="<?php echo $id_hp ?>" > 
+    <input id="id_hp" name="id_hp" value="<?php echo $id_hp ?>" hidden> 
     <div class="form-group">
       <input type="text" id="nama_hp" class="form-control" placeholder="Nama Hama Penyakit" name="nama_hp" aria-describedby="sizing-addon2" >
     </div>

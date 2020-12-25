@@ -47,6 +47,11 @@
                                     </li>
                                     <li><a href="<?php echo site_url('user/Tentang')?>">Tentang</a></li>
                                     <li><a href="<?php echo site_url('user/Contact')?>">Contact</a></li>
+                                   <li><a class="fa fa-user">Yusuf</a>
+                                        <ul class="dropdown"><center>
+                                        <li><a class="fa fa-sign-out" href="<?php echo site_url('user/Contact')?>">Keluar</a></li>
+                                        </ul></center>
+                                    </li>
                                 </ul>
 
                      
