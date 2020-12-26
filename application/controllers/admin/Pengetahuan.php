@@ -7,6 +7,11 @@ class Pengetahuan extends CI_Controller {
         parent::__construct();      
         $this->load->model('M_pengetahuan');
         $this->load->helper('url');
+
+        if($this->session->userdata('level') == "" | $this->session->userdata('level') == "user"){
+            $this->session->set_flashdata('pesan', '<p class="text-center alert alert-warning" role="alert">Anda Harus Login Sebagai Admin !</p>');
+            redirect('Auth');
+          }
        
 }
 

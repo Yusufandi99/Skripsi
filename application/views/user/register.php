@@ -34,20 +34,34 @@
             <div class="row">
                <div class="col-md-12">
                     <!-- Section Heading -->
-                <form action="<?= base_url() ?>user/Register/daftar" method="post" >
-                    <div class="section-heading text-center">
+                <form action="<?= base_url('Auth/register') ?>" method="post" >
+                    <div class="section-heading text">
                         <h2>Daftar</h2>
                         <p>Masukkan Data Diri Anda</p>
                         <br>
-                         <input type="text" class="form-control" name="id_user" placeholder=" id_user" value="<?php echo sprintf( $id_user) ?>" hidden>
-                         <div class="col-md 2">
-                        <input type="text" class="form-control" name="nama" placeholder=" Nama Lengkap">
-                        <br> 
-                        <input type="text" class="form-control" name="username" placeholder="Username">
-                        <br>
-                        <input type="password" class="form-control" name="password" placeholder="Password"><br>
-                        <textarea type="textarea" class="form-control" name="alamat" placeholder="Alamat"></textarea><br>
-                        <input type="text" class="form-control" name="level" value="user" hidden><br>
+                         <input type="hidden" class="form-control" name="id_user" placeholder=" id_user" value="<?php echo sprintf( $id_user) ?>">
+                         <div class="form-group">
+                           <input type="text"
+                             class="form-control" name="nama" id="" value="<?= set_value('nama') ?>" placeholder="Nama Lengkap">
+                           <?= form_error('nama', '<span class="form-bar text-danger">',' !</span>') ?>
+                         </div>
+                         <div class="form-group">
+                           <input type="text"
+                             class="form-control" name="username" id="" value="<?= set_value('username') ?>" placeholder="Username">
+                           <?= form_error('username', '<span class="form-bar text-danger">',' !</span>') ?>
+                         </div>
+                         <div class="form-group">
+                           <input type="password" class="form-control"  name="password1" id="" placeholder="Password">
+                           <?= form_error('password1', '<span class="form-bar text-danger">',' !</span>') ?>
+                         </div>
+                         <div class="form-group">
+                           <input type="password" class="form-control" name="password2" id="" placeholder="Ulangi Password">
+                           <?= form_error('password2', '<span class="form-bar text-danger">',' !</span>') ?>
+                         </div>
+                         <div class="form-group">
+                           <textarea class="form-control" name="alamat" placeholder="Alamat..." rows="3"><?= set_value('alamat') ?></textarea>
+                           <?= form_error('alamat', '<span class="form-bar text-danger">',' !</span>') ?>
+                         </div>
                     </div>
                       <button type="submit" class="btn alazea-btn w-10">Daftar</button>
                     </div>  

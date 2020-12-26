@@ -49,22 +49,12 @@
                                         <tr>
                                             <td width="100" class="text-left">Nama</td>
                                             <td width="30">:</td>
-                                            <td width="300" class="text-left"></td>
+                                            <td width="300" class="text-left"><?= $this->session->userdata('nama') ?></td>
                                         </tr>
-                                        <!-- <tr>
-                                            <td width="100" class="text-left">Pekerjaan</td>
-                                            <td width="30">:</td>
-                                            <td width="100" class="text-left"></td>
-                                        </tr>
-                                        <tr>
-                                            <td width="100" class="text-left">Gender</td>
-                                            <td width="30">:</td>
-                                            <td width="100" class="text-left"></td>
-                                        </tr> -->
                                         <tr>
                                             <td width="100" class="text-left">Tanggal</td>
                                             <td width="30">:</td>
-                                            <td width="300" class="text-left"></td>
+                                            <td width="300" name="tanggal" value="<?= date('d-m-Y') ?>" class="text-left"><?= date('d-m-Y') ?></td>
                                         </tr>
                                     </table>
                                     <br>

@@ -7,6 +7,11 @@ class Diagnosa extends CI_Controller {
         parent::__construct();      
         $this->load->model('M_diagnosa');
         $this->load->helper('url');
+
+        if($this->session->userdata('level') == ""){
+            $this->session->set_flashdata('pesan', '<p class="text-center alert alert-warning" role="alert">Anda Harus Login Terlebih Dahulu !</p>');
+            redirect('Auth');
+          }
     }
     
 	public function index()
@@ -34,6 +39,7 @@ class Diagnosa extends CI_Controller {
         | ------------------------------------------------------------------------
         |*/
         $counter = count($this->input->post('kondisi[]')); # hitung jumlah berapa gejala yang dipilih (digunakan untuk looping)
+        $input_tanggal = date('Y-m-d H:i:s');
         $arbobot = array('0','1.0', '0.8', '0.6', '0.4', '0.2'); #nilai bobot dari kondisi yang dipilih user
 
         // Ambil gejala dan kondisi yang dipilih user
@@ -103,8 +109,10 @@ class Diagnosa extends CI_Controller {
         | ------------------------------------------------------------------------
         |*/
             $data_hasil = [
+                'id_user' =>$this->session->userdata('id_user'),
                 'hp' =>$input_penyakit,
                 'gejala' =>$input_gejala,
+                'tanggal' =>$input_tanggal,
                 'id_hp' =>$penyakit_1[1],
                 'cf_hasil' =>$nilai[1],
             ];

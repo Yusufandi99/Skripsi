@@ -36,8 +36,15 @@
                             <!-- Navbar Start -->
                             <div class="classynav">
                                 <ul>
+                                <?php if($this->session->userdata('level') == ""){ ?>
                                     <li><a href="<?php echo site_url('user/Login')?>" class="btn alazea-btn mr">Login</a></li>
+                                <?php }else{} ?>
                                     <li><a href="<?php echo site_url('Home')?>">Home</a></li>
+
+                                <?php if($this->session->userdata('level') == "admin"){ ?>
+                                    <li><a href="<?php echo site_url('admin/Homeadmin')?>">Halaman Admin</a></li>
+                                <?php }else{} ?>
+
                                     <li><a href="<?php echo site_url('user/Diagnosa')?>">Diagnosa</a></li>
                                     <li><a>Info</a>
                                         <ul class="dropdown">
@@ -47,11 +54,13 @@
                                     </li>
                                     <li><a href="<?php echo site_url('user/Tentang')?>">Tentang</a></li>
                                     <li><a href="<?php echo site_url('user/Contact')?>">Contact</a></li>
-                                   <li><a class="fa fa-user">Yusuf</a>
+                                    <?php if($this->session->userdata('nama') == ""){}else{ ?>
+                                    <li><a class="fa fa-user"> <?= $this->session->userdata('username') ?></a>
                                         <ul class="dropdown"><center>
-                                        <li><a class="fa fa-sign-out" href="<?php echo site_url('user/Contact')?>">Keluar</a></li>
+                                        <li><a class="fa fa-sign-out" href="<?php echo site_url('Auth/logout')?>">Keluar</a></li>
                                         </ul></center>
                                     </li>
+                                    <?php } ?>
                                 </ul>
 
                      

@@ -3,6 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Homeadmin extends CI_Controller {
 
+  function __construct(){
+    parent::__construct();
+      if($this->session->userdata('level') == "" | $this->session->userdata('level') == "user"){
+        $this->session->set_flashdata('pesan', '<p class="text-center alert alert-warning" role="alert">Anda Harus Login Sebagai Admin !</p>');
+        redirect('Auth');
+      }
+    }
 	
 	public function index()
 	{

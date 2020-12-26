@@ -28,25 +28,28 @@
         </div>
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
-      <?= $this->session->flashdata('alert'); ?>
+      <?= $this->session->flashdata('pesan'); ?>
+      <?= form_error('username', '<p class="text-center alert alert-danger" role="alert">',' !</p>') ?>
+      <?= form_error('password', '<p class="text-center alert alert-danger" role="alert">',' !</p>') ?>
  <section class="alazea-portfolio-area portfolio-page section-padding-0-100">
         <div class="container">
             <div class="row">
                <div class="col-md-12">
                     <!-- Section Heading -->
-                <form action="<?php echo base_url('auth/cek_login'); ?>" method="post" >
+                <form action="<?php echo base_url('Auth'); ?>" method="post" >
                     <div class="section-heading text-center">
                         <h2>Login</h2>
                         <p>Masukkan Username dan Password anda</p>
                         <br>
                          <div class="col-md 2">
                         <input type="text" class="form-control" name="username" placeholder=" Username">
+                        
                         <br> 
                         <input type="password" class="form-control" name="password" placeholder="Password">
                         <br>
                     </div>
                          <button class="btn alazea-btn w-10">Login</button>
-                         <a href="<?php echo site_url('user/Register')?>" class="btn alazea-btn w-10">Daftar</a>
+                         <a href="<?php echo site_url('Auth/register')?>" class="btn alazea-btn w-10">Daftar</a>
                          <p>Daftarkan diri anda untuk memulai diagnosa.</p>
                     </div>  
                 </form>           	

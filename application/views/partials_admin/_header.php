@@ -64,11 +64,21 @@
               </li>
             </ul>
           </li>
-          <!-- User Account: style can be found in dropdown.less -->
+
+          
+          <!-- Menuju Halaman Diagnosa -->
+          <li class="dropdown user user-menu">
+            <a href="<?= base_url('user/Diagnosa') ?>">
+              <i class="fa fa-spinner"></i>
+              <span class="hidden-xs">Halaman Diagnosa</span>
+            </a>
+          </li>
+
+
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url('assets_user/img/core-img/jasentra.jpg')?>" class="user-image" alt="User Image">
-              <span class="hidden-xs">Yusuf Andi</span>
+              <span class="hidden-xs"><?= $this->session->userdata('username') ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -76,14 +86,14 @@
                 <img src="<?php echo base_url('assets_user/img/core-img/jasentra.jpg')?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Yusuf Andi
+                  <?= $this->session->userdata('nama') ?>
                 </p>
               </li>
               <!-- Menu Body -->
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div  style="text-align: center;">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?= base_url('Auth/logout') ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

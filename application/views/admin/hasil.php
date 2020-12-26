@@ -35,6 +35,7 @@
       <thead>
         <tr>
           <th>No</th>
+          <th>Tanggal</th>
           <th>Nama</th>
           <th>Diagnosa Hama/Penyakit</th>
           <th>Hasil CF</th>
@@ -46,7 +47,8 @@
       ?>
       <tr>
         <td><?php echo $no++ ?></td>
-        <td>Yusuf</td>
+        <td><?php echo $p['tanggal'] ?></td>
+        <td><?php echo $p['nama'] ?></td>
         <td><?php echo $p['nama_hp'] ?></td>
         <td><?php echo  round($p['cf_hasil']*100); ?> %</td>
        </tr>

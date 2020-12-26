@@ -9,11 +9,12 @@
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <!-- Post Content -->
+                            <?= $this->session->flashdata('pesan') ?>
                             <div class="hero-slides-content text-center">
                                 <h2>Sistem Pakar Hama Penyakit Jamur Tiram</h2>
                                 <p>Sistem Pakar ini membantu petani jamur tiram untuk menentukan Hama dan Penyakit yang sedang menyerang diketahui dari gejala-gejala yang sedang terjadi. Sistem ini langsung terhubung dengan pakarnya dari PT.JASENTRA yaitu salah satu perusahaan budidaya jamur tiram yang berada di Kecamatan Rambipuji Kabupaten Jember</p>
                                 <div class="welcome-btn-group">
-                                    <a href="<?php echo site_url('user/Login')?>" class="btn alazea-btn mr-30">DIAGNOSA</a>
+                                    <a href="<?php echo site_url('user/Diagnosa')?>" class="btn alazea-btn mr-30">DIAGNOSA</a>
                                 </div>
                             </div>
                         </div>
