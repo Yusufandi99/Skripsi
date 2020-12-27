@@ -17,4 +17,8 @@ class M_hasil extends CI_Model {
         return $query;
 	}
 
+    function hapus_data(){
+       $this->db->empty_table('hasil');
+    }
+
 }

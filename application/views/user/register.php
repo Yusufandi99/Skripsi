@@ -36,8 +36,9 @@
                     <!-- Section Heading -->
                 <form action="<?= base_url('Auth/register') ?>" method="post" >
                     <div class="section-heading text">
+                      <center>
                         <h2>Daftar</h2>
-                        <p>Masukkan Data Diri Anda</p>
+                        <p>Masukkan Data Diri Anda</p></center>
                         <br>
                          <input type="hidden" class="form-control" name="id_user" placeholder=" id_user" value="<?php echo sprintf( $id_user) ?>">
                          <div class="form-group">
@@ -63,7 +64,7 @@
                            <?= form_error('alamat', '<span class="form-bar text-danger">',' !</span>') ?>
                          </div>
                     </div>
-                      <button type="submit" class="btn alazea-btn w-10">Daftar</button>
+                      <center><button type="submit" class="btn alazea-btn w-10">Daftar</button></center>
                     </div>  
                 </form>             
  </section>

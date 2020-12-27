@@ -8,6 +8,19 @@
     <!-- Content Header (Page header) -->
  <!-- Content Header (Page header) -->
         <!-- /.modal -->
+         <div class="modal fade" id="modal-hapus" aria-lavelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="col-md-offset-1 col-md-10 col-md-offset-1 well">
+      <div class="form-msg"></div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h3 class="modal-title" id="exampleModalLabel"> Apakah Anda Yakin Menghapus Semua Data Hasil Diagnosa ?</h3>
+         <br>
+        <a class="form-control btn btn-danger glyphicon glyphicon-remove-sign" href="<?php echo base_url('admin/hasil/deleteall') ?>">Hapus</a>
+        </div>
+      </div>    </div></div>
+  
 
 
 
@@ -27,6 +40,8 @@
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-12 col-xs-6">
+
+      <button class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-hapus" >Hapus</button>
 <div class="box">
   <div class="box-header">
   

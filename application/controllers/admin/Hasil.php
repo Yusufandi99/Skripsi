@@ -21,6 +21,12 @@ class Hasil extends CI_Controller {
         $this->load->view('admin/hasil',$data);
         
 	}
+
+    public function deleteall()
+    {
+         $this->M_hasil->hapus_data();
+         redirect('admin/hasil');
+    }
  
    
 }
