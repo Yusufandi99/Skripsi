@@ -37,20 +37,42 @@
       <thead>
         <tr>
           <th>No</th>
-          <th>Hama/Penyakit</th>
-          <th>Gejala</th>
+          <th>Aturan</th>
         </tr>
          </thead>
          
       <?php
       
       $no = 1;
-      foreach ($aturan as $p ) {
+      $query_penyakit = $this->db->get('hp')->result();
+      foreach ($query_penyakit as $p ) {
       ?>
       <tr>
         <td><?php echo $no++ ?></td>
-        <td><?php echo $p['nama_hp'] ?></td>
-        <td><?php echo $p['gejala'] ?></td>
+        <td>
+           <?php
+             $query_aturan = $this->db
+                          ->join('gejala', 'gejala.id_gejala=pengetahuan.id_gejala')
+                          ->where('id_hp', $p->id_hp)
+                          ->order_by('pengetahuan.id_gejala', 'ASC')
+                          ->get('pengetahuan')
+                          ->result();
+              $i= 1;
+             foreach ($query_aturan as $row) {
+               if($i == 1){
+                 
+                echo " <b>IF</b> ".$row->gejala; 
+                echo "<br>";
+                
+              }else{
+                
+                echo " <b>AND</b> ".$row->gejala;
+                echo "<br>";
+                
+               } $i++; 
+             } ?>
+           <b>THEN <span class="text-info"><?php echo strtoupper($p->nama_hp) # strtoupper->biar tulisan nya huruf kapital ?></span></b>
+        </td>
       </tr>
     <?php } ?>
      
