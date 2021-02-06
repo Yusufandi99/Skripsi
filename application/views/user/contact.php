@@ -49,7 +49,6 @@
                     <div class="contact-information">
                         <p><span>Alamat:</span> Jl. Airlangga, Gudang Rejo, Rambipuji, Jember, Jawa Timur</p>
                         <p><span>Telepon:</span> 0813 3170 7027 (Pak Riezky)</p>
-                        <p><span>Email:</span> jasentra@gmail.com</p>
                     </div>
                 </div>
             </div>

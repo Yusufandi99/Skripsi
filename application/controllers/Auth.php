@@ -97,6 +97,10 @@ class Auth extends CI_Controller
             'required' => 'Password wajib diisi!',
             'matches' => 'Password tidak cocok',
         ]);
+        $this->form_validation->set_rules('no_hp', 'No Hp', 'required|trim',
+        [
+            'required' => 'No Hp Wajib diisi!',
+        ]);
         $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim',
         [
             'required' => 'Alamat Wajib diisi!',

@@ -60,6 +60,10 @@
                            <?= form_error('password2', '<span class="form-bar text-danger">',' !</span>') ?>
                          </div>
                          <div class="form-group">
+                           <input type="number" class="form-control" name="no_hp" id="" placeholder="Nomer Hp">
+                           <?= form_error('no_hp', '<span class="form-bar text-danger">',' !</span>') ?>
+                         </div>
+                         <div class="form-group">
                            <textarea class="form-control" name="alamat" placeholder="Alamat..." rows="3"><?= set_value('alamat') ?></textarea>
                            <?= form_error('alamat', '<span class="form-bar text-danger">',' !</span>') ?>
                          </div>
