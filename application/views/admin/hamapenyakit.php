@@ -188,11 +188,8 @@
     <div class="row">
       <div class="col-md-12">
           <div class="box box-info">
-                             <h5>Pilih Gambar</h5>
- 
-            <div class="box-header">
-        
-   
+            <h5>Pilih Gambar</h5>
+          <div class="box-header">
       <input  class="form-control-file" type="file" name="gambar" id="gambar">                
     
   </div>

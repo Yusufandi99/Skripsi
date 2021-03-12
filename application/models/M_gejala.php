@@ -20,7 +20,7 @@ class M_gejala extends CI_Model {
     }
       public function kode()
     {
-        $q = $this->db->query("SELECT MAX(RIGHT(id_gejala,1)) as id_gejala from gejala");
+        $q = $this->db->query("SELECT MAX(RIGHT(id_gejala,2)) as id_gejala from gejala");
         $kd = "";
         if($q->num_rows()>0){
             foreach($q->result() as $k){

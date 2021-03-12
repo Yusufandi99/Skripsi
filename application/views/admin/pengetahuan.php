@@ -36,10 +36,10 @@
  <form method="post" enctype="multipart/form-data" action="<?php echo base_url(). 'admin/pengetahuan/edit'; ?>">
               <input id="id_pengetahuan" name="id_pengetahuan" value="<?php echo $p['id_pengetahuan'] ?>" hidden> 
     <div class="form-group">
-      <input type="text" id="cf_pakar" class="form-control" name="cf_pakar" aria-describedby="sizing-addon2" value="<?php echo $p['nama_hp'] ?>" disabled>
+      <input type="text" id="nama_hp" class="form-control" name="nama_hp" aria-describedby="sizing-addon2" value="<?php echo $p['nama_hp'] ?>" disabled>
     </div>
     <div class="form-group">
-      <input type="text" id="cf_pakar" class="form-control" name="cf_pakar" aria-describedby="sizing-addon2" value="<?php echo $p['gejala'] ?>" disabled>
+      <input type="text" id="gejala" class="form-control" name="gejala" aria-describedby="sizing-addon2" value="<?php echo $p['gejala'] ?>" disabled>
     </div>
     
     <div class="form-group">

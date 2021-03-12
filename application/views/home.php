@@ -12,4 +12,3 @@
 </body>
 <?php $this->load->view('partials/script'); ?>
 </html>
-
