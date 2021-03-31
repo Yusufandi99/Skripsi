@@ -117,7 +117,7 @@
                                                                                 
                                         $query = $this->db->where('id_hp',$penyakit_terpilih)->get('hp');
                                         foreach ($query->result() as $p) { ?>
-                                           <br><br><h4 class="judul"> Penyakit /Hama :<br> <?= $p->nama_hp; ?></h4>
+                                           <br><br><h4 class="judul"> Penyakit / Hama :<br> <?= $p->nama_hp; ?></h4>
                                         
                                     <br><br><h4><span class="step">Nilai CF :  <?= $hasil ?><br><br> ( <?= $persentasi ?>% )</span></h4>
                                     

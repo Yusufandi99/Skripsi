@@ -23,6 +23,7 @@ class Register extends CI_Controller {
               $nama = $this->input->post('nama');
               $username = $this->input->post('username');
               $password = md5($this->input->post('password'));
+              $no_hp = $this->input->post('no_hp');
               $alamat = $this->input->post('alamat');
               $level = $this->input->post('level');
      
@@ -31,7 +32,8 @@ class Register extends CI_Controller {
               'nama' => $nama,
               'username' => $username,
               'password' => $password,
-              'alamat' => $alamat,
+              'no_hp' => $no_hp,
+              'alamat' => $alamat,              
               'level' => $level,
         );
                $this->M_register->input_data($data,'user');

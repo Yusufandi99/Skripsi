@@ -44,8 +44,8 @@ class Diagnosa extends CI_Controller {
 
         // Ambil gejala dan kondisi yang dipilih user
         for ($i = 0; $i < $counter; $i++) {
-        $kondisi = explode("_", $_POST['kondisi'][$i]);
-            if (strlen($_POST['kondisi'][$i]) > 1) {
+        $kondisi = explode("_", $_POST['kondisi'][$i]); //untuk memecah string setiap tanda petik
+            if (strlen($_POST['kondisi'][$i]) > 1) { // strlen = untuk menghitung jumlah string atau karakter
                 $argejala []= $kondisi[0]; // array gejala di pilih user
                 $arkondisi [] = $kondisi[1]; // array kondisi yang dipilih user
             }
@@ -68,11 +68,11 @@ class Diagnosa extends CI_Controller {
             
             $query_gejala = $this->db->select('*')->where('id_hp', $key['id_hp'])->get('pengetahuan');
             
-            foreach ($query_gejala->result_array() as $key => $value) {
+            foreach ($query_gejala->result_array() as $key => $value) { // foreach = perulangan data yang sudah ada pada tabel database
             
                 
-                for ($i = 0; $i < $counter; $i++) {
-                    $array_kondisi = explode("_", $_POST['kondisi'][$i]);
+                for ($i = 0; $i < $counter; $i++) { //for = perulangan data yang belum ada pada tabel seperti hasil perkalian,dsb.
+                    $array_kondisi = explode("_", $_POST['kondisi'][$i]); //untuk memecah string setiap tanda petik
                     $gejala = $array_kondisi[0];
                     if ($value['id_gejala'] == $gejala) {
                         $cf = $value['cf_pakar'] * $arbobot[$array_kondisi[1]];

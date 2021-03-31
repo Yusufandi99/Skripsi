@@ -58,7 +58,7 @@ class Auth extends CI_Controller
                         $this->session->set_flashdata('pesan', 'Selamat Datang, '. $this->session->userdata('nama'));
                         redirect('admin/Homeadmin');
                     }if ($user->level == "user") { // Jika User biasa
-                        $this->session->set_flashdata('pesan', 'Selamat Datang, '. $this->session->userdata('nama'));
+                        $this->session->set_flashdata('pesan', '<p class="text-center alert alert-danger"  </p> '. $this->session->userdata('nama'));
                         redirect('Home');
                     }
                     
@@ -118,6 +118,7 @@ class Auth extends CI_Controller
             $nama = $this->input->post('nama');
             $username = $this->input->post('username');
             $password = password_hash($this->input->post('password2'), PASSWORD_DEFAULT);
+            $no_hp = $this->input->post('no_hp');
             $alamat = $this->input->post('alamat');
             
             $data = array(
@@ -125,6 +126,7 @@ class Auth extends CI_Controller
                 'nama' => $nama,
                 'username' => $username,
                 'password' => $password,
+                'no_hp' => $no_hp,
                 'alamat' => $alamat,
                 'level' => "user",
             );
