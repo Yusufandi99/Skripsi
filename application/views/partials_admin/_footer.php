@@ -1,8 +1,8 @@
 <footer class="main-footer">
 	<!-- To the right -->
 	<div class="pull-right hidden-xs">
-		Tes Fast Print
+		Sistem Pakar Jamur Tiram
 	</div>
 	<!-- Default to the left -->
-	<strong> &copy; 2022 Yusuf Andi Nugroho</a>.</strong> All rights reserved.
+	<strong>Copyright &copy; 2020 Politeknik Negeri Jember</a>.</strong> All rights reserved.
 </footer>
