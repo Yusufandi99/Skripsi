@@ -3,11 +3,11 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="<?php echo site_url('Produk')?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>J</b>ST</span>
+      <span class="logo-mini"><b>F</b>PT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b> JASENTRA</span>
+      <span class="logo-lg"><b>Admin</b> FastPrint</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -66,36 +66,10 @@
           </li>
 
           
-          <!-- Menuju Halaman Diagnosa -->
-          <li class="dropdown user user-menu">
-            <a href="<?= base_url('user/Diagnosa') ?>">
-              <i class="fa fa-spinner"></i>
-              <span class="hidden-xs">Halaman Diagnosa</span>
-            </a>
-          </li>
+        
 
-
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url('assets_user/img/core-img/jasentra.jpg')?>" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?= $this->session->userdata('username') ?></span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="<?php echo base_url('assets_user/img/core-img/jasentra.jpg')?>" class="img-circle" alt="User Image">
-
-                <p>
-                  <?= $this->session->userdata('nama') ?>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div  style="text-align: center;">
-                  <a href="<?= base_url('Auth/logout') ?>" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
+          
+            
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
