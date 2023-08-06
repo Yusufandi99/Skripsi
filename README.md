@@ -1,4 +1,1 @@
-# ci-restserver
-Check the recent version at https://github.com/chriskacerguis/codeigniter-restserver
-
-My alternate version https://github.com/ardisaurus/old-rest-ci
+Aplikasi Sistem Pakar Diagnosa Hama dan Pnyakit Tanaman Jamur Tiram pada PT Jasentra Jember
